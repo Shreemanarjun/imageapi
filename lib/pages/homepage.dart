@@ -100,6 +100,12 @@ class _HomePageState extends State<HomePage> {
                   )),
             ElevatedButton(
                 onPressed: () async {
+                  image = null;
+                  isImageSelected.value = false;
+                },
+                child: const Text("Clear Image")),
+            ElevatedButton(
+                onPressed: () async {
                   image = await _picker.pickImage(source: ImageSource.gallery);
                   if (image == null) {
                     isImageSelected.value = false;
